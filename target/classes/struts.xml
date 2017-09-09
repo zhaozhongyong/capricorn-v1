@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+		<constant name="struts.devMode" value="true" />
+		<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
+	<!-- Add packages here -->
+	<package name="system" extends="struts-default" namespace="/system">
+		<action name="send_*_*" class="sendAction">
+			<result name="send">/WEB-INF/jsp/{1}/{2}.jsp</result>
+		</action>
+		<action name="loginAction_*" class="loginAction" method="{1}">
+			<result name="success">/WEB-INF/jsp/system/{1}_success.jsp</result>
+			<result name="error">/WEB-INF/jsp/system/login.jsp</result>
+		</action>
+		<action name="authImageAction" class="authImageAction">
+		</action>
+	</package>
+	
+	<!-- test -->
+	<package name="test" extends="struts-default" namespace="/test">
+	<!-- 
+		<action name="send_*_*" class="sendAction">
+			<result name="send">/WEB-INF/jsp/{1}/{2}.jsp</result>
+		</action>
+	 -->
+	 	<action name="sendAction" class="sendAction" >
+	 		<result name="login1">/WEB-INF/jsp/test/login1.jsp</result>
+	 	</action>
+	</package>
+</struts>

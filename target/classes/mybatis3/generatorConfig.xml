@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<classPathEntry
+		location="D:\albert\libs\lib\mysql-connector-java-5.1.24\mysql-connector-java-5.1.24.jar" />
+	<context id="context1">
+		<!-- 生成的Java文件的编码 -->
+		<property name="javaFileEncoding" value="UTF-8" />
+		<!-- 格式化java代码 -->
+		<property name="javaFormatter"
+			value="org.mybatis.generator.api.dom.DefaultJavaFormatter" />
+		<!-- 格式化XML代码 -->
+		<property name="xmlFormatter"
+			value="org.mybatis.generator.api.dom.DefaultXmlFormatter" />
+
+		<commentGenerator>
+			<!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://127.0.0.1:3306/ssht" userId="root"
+			password="root" />
+		<javaModelGenerator targetPackage="com.zhaozhy.capricorn.entity"
+			targetProject="capricorn" />
+		<sqlMapGenerator targetPackage="com.zhaozhy.capricorn.entity.mapper"
+			targetProject="capricorn" />
+		<!-- mapper接口会生成在src/main/java下的com.zhaozhy.capricorn.dao包之下 -->
+		<javaClientGenerator targetPackage="com.zhaozhy.capricorn.dao"
+			targetProject="capricorn" type="XMLMAPPER" />
+		<!--对应数据库表名 domainObjectName为实体类名称 -->
+		<table tableName="student" domainObjectName="Student" 
+			enableCountByExample="false" enableDeleteByExample="false"
+			enableUpdateByExample="false" selectByExampleQueryId="false"
+			enableSelectByExample="false">
+			<property name="useActualColumnNames" value="true"/>
+		</table>
+	</context>
+</generatorConfiguration>
